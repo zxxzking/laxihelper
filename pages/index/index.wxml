@@ -1,0 +1,23 @@
+<!--index.wxml-->
+<view class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+</view>
+<view class = "mealsInfo" wx:for="{{mealArray}}" wx:key="{{index}}">
+  <view class = "breakfast">
+    {{item.text}}：<input bindinput='bindInput' id='{{index}}'></input>
+    <button disabled = "{{item.judge}}" wx:if="{{item.judge}}" >
+      {{tips}}
+    </button>
+    <button disabled = "{{item.judge}}" wx:if="{{!item.judge}}" bindtap='saveMealInfo' id='{{index}}'>
+      保存
+    </button>
+  </view>
+</view>
+
+<view>
+  <button bindtap='recordLaxi'>
+    记录我的拉稀状态
+  </button>
+
+</view>
