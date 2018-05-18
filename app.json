@@ -19,6 +19,8 @@
         "pagePath": "pages/logs/logs",
         "text": "哪天拉了稀"
       }
-    ]
+    ],
+    "selectedColor": "#ff66ff",
+    "color":"#66ccff"
   }
 }

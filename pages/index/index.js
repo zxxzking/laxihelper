@@ -48,7 +48,6 @@ Page({
       })
 
     } else {
-      console.log("aaa")
       wx.getUserInfo({
         success: res => {
           app.globalData.userInfo = res.userInfo
@@ -67,34 +66,23 @@ Page({
       wx.login({
         success: function (res) {
           var code = res.code
+          console.log(code)
           wx.request({
-            url: 'https://api.weixin.qq.com/sns/jscode2session?appid=APPID&secret=SECRET&js_code=JSCODE&grant_type=authorization_code',
-            data: {
-              appid: 'wxb5c7e76760f4bd27',
-              secret: '9473de08dd16a85b7738a96af4c611fe',
-              js_code: code,
-              grant_type: 'authorization_code'
+            header: {
+              'content-type': 'application/x-www-form-urlencoded' // 默认值
             },
-            success: res => {
-              app.globalData.openId = res.data.openid
-              wx.request({
-                header: {
-                  'content-type': 'application/x-www-form-urlencoded' // 默认值
-                },
-                method: 'post',
-                url: 'http://192.168.65.103:9093/wechat/initUser',
-                data: {
-                  openId: res.data.openid,
-                  nickName: app.globalData.userInfo.nickName,
-                  avatarUrl: app.globalData.userInfo.avatarUrl
-                },
-                success: function (res) {
-                  var tkn = res.data.data
-                  app.globalData.userToken = tkn
-                  wx.setStorageSync("token", tkn)
-                  
-                }
-              })
+            method: 'post',
+            url: 'https://m.yangbasui.com/wechat/initUser',
+            data: {
+              code: code,
+              nickName: app.globalData.userInfo.nickName,
+              avatarUrl: app.globalData.userInfo.avatarUrl
+            },
+            success: function (res) {
+              var tkn = res.data.data
+              app.globalData.userToken = tkn
+              wx.setStorageSync("token", tkn)
+
             }
           })
         }
@@ -106,7 +94,7 @@ Page({
     
     wx.request({
       
-      url: 'http://192.168.65.103:9093/wechat/currentTime',
+      url: 'https://m.yangbasui.com/wechat/currentTime',
       method:'get',
       success:res => {
         this.setData({
@@ -176,7 +164,7 @@ Page({
         'content-type': 'application/x-www-form-urlencoded' // 默认值
       },
       method: 'post',
-      url: 'http://192.168.65.103:9093/wechat/saveMealInfo',
+      url: 'https://m.yangbasui.com/wechat/saveMealInfo',
       data: {
         token: token,
         meal: meal,
@@ -237,7 +225,7 @@ Page({
             'content-type': 'application/x-www-form-urlencoded' // 默认值
           },
           method: 'post',
-          url: 'http://192.168.65.103:9093/wechat/recordLaxi',
+          url: 'https://m.yangbasui.com/wechat/recordLaxi',
           data: {
             token: token,
             laxiStatus: laxiStatus

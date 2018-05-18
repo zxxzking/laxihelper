@@ -3,3 +3,18 @@
     <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
     <text class="userinfo-nickname">{{userInfo.nickName}}</text>
 </view>
+<view class="index-bd">
+    <view class="kind-list">
+      <block wx:for-items="{{mealInfoList}}" wx:key="{{index}}">
+        <view class="kind-list-item">
+          <view id="{{item.id}}" class="kind-list-item-hd" bindtap="kindToggle">
+            <view class="kind-list-text">{{item.date}}</view> <view class="kind-list-text">{{item.laxiStatus}}</view>
+          </view>
+          <view>早餐：{{item.breakfast}}</view>
+          <view>午餐：{{item.lunch}}</view>
+          <view>晚餐：{{item.dinner}}</view>
+          <view>小食：{{item.other}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
