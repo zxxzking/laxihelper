@@ -12,6 +12,8 @@
 	"appid": "wxb5c7e76760f4bd27",
 	"projectname": "what_does_i_eaten",
 	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,

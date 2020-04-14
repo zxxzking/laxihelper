@@ -21,6 +21,7 @@
       }
     ],
     "selectedColor": "#ff66ff",
-    "color":"#66ccff"
-  }
+    "color": "#66ccff"
+  },
+  "sitemapLocation": "sitemap.json"
 }

@@ -63,30 +63,7 @@ Page({
 
     // 获取个人信息
     function doLogin() {
-      wx.login({
-        success: function (res) {
-          var code = res.code
-          console.log(code)
-          wx.request({
-            header: {
-              'content-type': 'application/x-www-form-urlencoded' // 默认值
-            },
-            method: 'post',
-            url: 'https://m.yangbasui.com/wechat/initUser',
-            data: {
-              code: code,
-              nickName: app.globalData.userInfo.nickName,
-              avatarUrl: app.globalData.userInfo.avatarUrl
-            },
-            success: function (res) {
-              var tkn = res.data.data
-              app.globalData.userToken = tkn
-              wx.setStorageSync("token", tkn)
-
-            }
-          })
-        }
-      })
+     
     }
   },
 
