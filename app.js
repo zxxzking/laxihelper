@@ -41,3 +41,9 @@ App({
     userToken:null
   }
 })
+wx.showShareMenu({
+  withShareTicket: true,
+  success: function(res) {},
+  fail: function(res) {},
+  complete: function(res) {},
+})

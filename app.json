@@ -1,27 +1,12 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/index/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "拉稀助手",
+    "navigationBarTitleText": "计算金额小工具",
     "navigationBarTextStyle": "black"
-  },
-  "tabBar": {
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "今天吃了啥"
-      },
-      {
-        "pagePath": "pages/logs/logs",
-        "text": "哪天拉了稀"
-      }
-    ],
-    "selectedColor": "#ff66ff",
-    "color": "#66ccff"
   },
   "sitemapLocation": "sitemap.json"
 }

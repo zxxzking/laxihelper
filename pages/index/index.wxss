@@ -1,4 +1,8 @@
 /**index.wxss**/
+page {
+  background: rgb(216, 218, 217)
+}
+
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -18,4 +22,22 @@
 
 .usermotto {
   margin-top: 200px;
+}
+
+.inputStyle {
+  width: 98%;
+  height: 42px;
+  padding-right: 1px;
+  border: 2px solid #7BA7AB;
+  border-radius: 5px;
+  outline: none;
+  background: #F9F0DA;
+  color: #9E9C9C;
+}
+
+.button {
+  width: 80%;
+  margin-top: 20rpx;
+  background-color: rgb(35, 153, 114);
+  color: rgb(201, 186, 56);
 }
